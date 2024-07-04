@@ -28,7 +28,7 @@ public class login extends JFrame{
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(null,"El usuario o contraseña es incorrecto");
+                    JOptionPane.showMessageDialog(null,"La contraseña es incorrecta");
                     password.setText("");
 
                 }
