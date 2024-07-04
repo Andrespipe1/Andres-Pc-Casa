@@ -34,7 +34,7 @@
           <text value="Menu"/>
         </properties>
       </component>
-      <component id="f3c28" class="javax.swing.JLabel">
+      <component id="f3c28" class="javax.swing.JLabel" binding="saldoLabel">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>

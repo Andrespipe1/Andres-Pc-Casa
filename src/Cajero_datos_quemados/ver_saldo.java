@@ -7,10 +7,12 @@ import java.awt.event.ActionListener;
 public class ver_saldo extends JFrame {
     private JPanel panel_saldo;
     private JButton menuButton;
+    private JLabel saldoLabel;
 
-    public ver_saldo() {
+    public ver_saldo(double saldoActual) {
         super("VER SALDO");
         setContentPane(panel_saldo);
+        saldoLabel.setText("$ "+saldoActual);
 
         menuButton.addActionListener(new ActionListener() {
             @Override
@@ -22,10 +24,10 @@ public class ver_saldo extends JFrame {
         });
     }
 
-    public void iniciar(){
+    public void iniciar() {
         setVisible(true);
         setLocationRelativeTo(null);
-        setSize(600,500);
+        setSize(600, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }

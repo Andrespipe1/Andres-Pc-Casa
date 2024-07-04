@@ -9,10 +9,13 @@ public class deposito extends JFrame {
     private JPanel panel_deposito;
     private JButton MENUButton;
     private JButton OKButton;
+    private double saldo;
 
-    public deposito(){
-        super("VER SALDO");
+    public deposito(double saldoActual) {
+        super("DEPÓSITO");
+        this.saldo = saldoActual;
         setContentPane(panel_deposito);
+
         MENUButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -21,20 +24,29 @@ public class deposito extends JFrame {
                 dispose();
             }
         });
+
         OKButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                double saldo=2000.53;
-
-
+                try {
+                    double deposito = Double.parseDouble(val_deposito.getText());
+                    if (deposito > 0) {
+                        saldo += deposito;
+                        JOptionPane.showMessageDialog(null, "Depósito exitoso. Saldo actual: $" + saldo);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Ingrese un monto válido para depositar.");
+                    }
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "Por favor ingrese un número válido.");
+                }
             }
         });
     }
 
-    public void iniciar(){
+    public void iniciar() {
         setVisible(true);
         setLocationRelativeTo(null);
-        setSize(600,500);
+        setSize(600, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
